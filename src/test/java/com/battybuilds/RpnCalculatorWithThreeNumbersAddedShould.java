@@ -27,25 +27,25 @@ public class RpnCalculatorWithThreeNumbersAddedShould {
 
 
     @Test
-    public void lastNumberToBeAddedShouldBeInAccumulator() {
+    public void haveLastNumberToBeAddedInAccumulator() {
         assertEquals(thirdNumber, calculator.getAccumulator());
     }
 
     @Test
-    public void whenDroppedOnceNextToLastNumberShouldBeInAccumulator() {
+    public void haveSecondToLastNumberInAccumulatorAfterDroppingOne() {
         calculator.drop();
         assertEquals(secondNumber, calculator.getAccumulator());
     }
 
     @Test
-    public void whenDroppedTwiceFirstNumberAddedShouldBeInAccumulator() {
+    public void haveFirstNumberInAccumulatorWhenDroppedTwice() {
         calculator.drop();
         calculator.drop();
         assertEquals(firstNumber, calculator.getAccumulator());
     }
 
     @Test
-    public void whenDroppedThreeTimesShouldReturnZero() {
+    public void haveAccumulatorBeZeroWhenStackIsEmpty() {
         calculator.drop();
         calculator.drop();
         calculator.drop();
