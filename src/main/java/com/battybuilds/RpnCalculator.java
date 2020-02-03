@@ -18,6 +18,9 @@ public class RpnCalculator {
     }
 
     public void drop() {
+        if (accumulatorStack.empty()) {
+            return;
+        }
         accumulatorStack.pop();
     }
 }

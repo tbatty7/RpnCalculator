@@ -21,4 +21,9 @@ public class RpnCalculatorShould {
         calculator.setAccumulator(BigDecimal.TEN);
         assertEquals(BigDecimal.TEN, calculator.getAccumulator());
     }
+
+    @Test
+    public void notThrowExceptionWhenDropIsCalledAndNoNumbersAreInAccumulator() {
+        calculator.drop();
+    }
 }
