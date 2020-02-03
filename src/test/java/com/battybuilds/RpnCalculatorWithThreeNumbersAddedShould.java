@@ -32,13 +32,13 @@ public class RpnCalculatorWithThreeNumbersAddedShould {
     }
 
     @Test
-    public void haveSecondToLastNumberInAccumulatorAfterDroppingOne() {
+    public void haveSecondNumberInAccumulatorAfterDroppingOne() {
         calculator.drop();
         assertEquals(secondNumber, calculator.getAccumulator());
     }
 
     @Test
-    public void haveFirstNumberInAccumulatorWhenDroppedTwice() {
+    public void haveFirstNumberInAccumulatorAfterDroppingTwo() {
         calculator.drop();
         calculator.drop();
         assertEquals(firstNumber, calculator.getAccumulator());
