@@ -18,9 +18,29 @@ public class RpnCalculatorShould {
 
     @Test
     public void returnNumberEntered() {
-        calculator.setAccumulator(BigDecimal.TEN);
-        assertEquals(BigDecimal.TEN, calculator.getAccumulator());
+        enterNumber(BigDecimal.TEN);
     }
 
+    @Test
+    public void addNumbersToStack() {
+        BigDecimal firstNumber = new BigDecimal(42);
+        BigDecimal secondNumber = new BigDecimal(2);
+        BigDecimal thirdNumber = new BigDecimal(5);
+        enterNumber(firstNumber);
+        enterNumber(secondNumber);
+        enterNumber(thirdNumber);
+        dropNumber(secondNumber);
+        dropNumber(firstNumber);
+        dropNumber(BigDecimal.ZERO);
+    }
 
+    private void dropNumber(BigDecimal secondNumber) {
+        calculator.drop();
+        assertEquals(secondNumber, calculator.getAccumulator());
+    }
+
+    private void enterNumber(BigDecimal firstNumber) {
+        calculator.setAccumulator(firstNumber);
+        assertEquals(firstNumber, calculator.getAccumulator());
+    }
 }

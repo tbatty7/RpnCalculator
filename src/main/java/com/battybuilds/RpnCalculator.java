@@ -1,16 +1,23 @@
 package com.battybuilds;
 
 import java.math.BigDecimal;
+import java.util.Stack;
 
 public class RpnCalculator {
-    private BigDecimal accumulator = BigDecimal.ZERO;
+    private Stack<BigDecimal> accumulatorStack = new Stack<>();
 
     public BigDecimal getAccumulator() {
-        return accumulator;
+        if (accumulatorStack.empty()) {
+            return BigDecimal.ZERO;
+        }
+        return accumulatorStack.peek();
     }
 
     public BigDecimal setAccumulator(BigDecimal number) {
-        accumulator = number;
-        return number;
+        return accumulatorStack.push(number);
+    }
+
+    public void drop() {
+        accumulatorStack.pop();
     }
 }
