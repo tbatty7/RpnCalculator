@@ -1,26 +1,19 @@
 package com.battybuilds;
 
 import java.math.BigDecimal;
-import java.util.Stack;
 
 public class RpnCalculator {
-    private Stack<BigDecimal> accumulatorStack = new Stack<>();
+    private OperandStack operandStack = new OperandStack();
 
     public BigDecimal getAccumulator() {
-        if (accumulatorStack.empty()) {
-            return BigDecimal.ZERO;
-        }
-        return accumulatorStack.peek();
+        return operandStack.getAccumulator();
     }
 
     public BigDecimal setAccumulator(BigDecimal number) {
-        return accumulatorStack.push(number);
+        return operandStack.setAccumulator(number);
     }
 
     public void drop() {
-        if (accumulatorStack.empty()) {
-            return;
-        }
-        accumulatorStack.pop();
+        operandStack.drop();
     }
 }

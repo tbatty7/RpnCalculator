@@ -8,8 +8,8 @@ public class OperandStack {
     private Stack<BigDecimal> operandStack = new Stack<>();
 
 
-    public void setAccumulator(BigDecimal number) {
-        operandStack.push(number);
+    public BigDecimal setAccumulator(BigDecimal number) {
+        return operandStack.push(number);
     }
 
     public BigDecimal getAccumulator() {
@@ -20,6 +20,9 @@ public class OperandStack {
     }
 
     public void drop() {
+        if (operandStack.empty()) {
+            return;
+        }
         operandStack.pop();
     }
 }

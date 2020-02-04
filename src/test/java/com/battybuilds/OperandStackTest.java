@@ -34,4 +34,10 @@ public class OperandStackTest {
         operandStack.drop();
         assertEquals(BigDecimal.ZERO, operandStack.getAccumulator());
     }
+
+    @Test
+    public void doesNothingWhenCallDropOnEmptyStack() {
+        operandStack.drop();
+        assertEquals(BigDecimal.ZERO, operandStack.getAccumulator());
+    }
 }
