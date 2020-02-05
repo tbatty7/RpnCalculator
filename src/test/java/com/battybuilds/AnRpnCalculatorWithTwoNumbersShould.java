@@ -14,8 +14,8 @@ public class AnRpnCalculatorWithTwoNumbersShould {
     @Before
     public void setUp() {
         rpnCalculator = new RpnCalculator();
-        rpnCalculator.setAccumulator(BigDecimal.TEN);
         rpnCalculator.setAccumulator(new BigDecimal(5));
+        rpnCalculator.setAccumulator(BigDecimal.TEN);
     }
 
     @Test
@@ -23,5 +23,12 @@ public class AnRpnCalculatorWithTwoNumbersShould {
         rpnCalculator.add();
         BigDecimal result = rpnCalculator.getAccumulator();
         assertEquals(new BigDecimal(15), result);
+    }
+
+    @Test
+    public void subtractThemCorrectly() {
+        rpnCalculator.subtract();
+        BigDecimal result = rpnCalculator.getAccumulator();
+        assertEquals(new BigDecimal(-5), result);
     }
 }

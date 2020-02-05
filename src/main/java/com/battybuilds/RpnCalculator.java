@@ -24,4 +24,12 @@ public class RpnCalculator {
         drop();
         setAccumulator(firstNumber.add(secondNumber));
     }
+
+    public void subtract() {
+        BigDecimal secondNumber = getAccumulator();
+        drop();
+        BigDecimal firstNumber = getAccumulator();
+        drop();
+        setAccumulator(firstNumber.subtract(secondNumber));
+    }
 }
