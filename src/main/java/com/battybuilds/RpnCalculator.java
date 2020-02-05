@@ -16,4 +16,12 @@ public class RpnCalculator {
     public void drop() {
         operandStack.drop();
     }
+
+    public void add() {
+        BigDecimal secondNumber = getAccumulator();
+        drop();
+        BigDecimal firstNumber = getAccumulator();
+        drop();
+        setAccumulator(firstNumber.add(secondNumber));
+    }
 }
