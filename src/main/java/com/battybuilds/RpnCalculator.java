@@ -18,18 +18,14 @@ public class RpnCalculator {
     }
 
     private void add() {
-        BigDecimal secondNumber = getAccumulator();
-        drop();
-        BigDecimal firstNumber = getAccumulator();
-        drop();
-        setAccumulator(firstNumber.add(secondNumber));
+        new Add().execute(operandStack);
     }
 
     private void subtract() {
-        BigDecimal secondNumber = getAccumulator();
-        drop();
-        BigDecimal firstNumber = getAccumulator();
-        drop();
+        BigDecimal secondNumber = operandStack.getAccumulator();
+        operandStack.drop();
+        BigDecimal firstNumber = operandStack.getAccumulator();
+        operandStack.drop();
         setAccumulator(firstNumber.subtract(secondNumber));
     }
 
