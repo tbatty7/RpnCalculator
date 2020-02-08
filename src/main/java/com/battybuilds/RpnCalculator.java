@@ -22,11 +22,7 @@ public class RpnCalculator {
     }
 
     private void subtract() {
-        BigDecimal secondNumber = operandStack.getAccumulator();
-        operandStack.drop();
-        BigDecimal firstNumber = operandStack.getAccumulator();
-        operandStack.drop();
-        setAccumulator(firstNumber.subtract(secondNumber));
+        new Subtract().execute(operandStack);
     }
 
     private void factorial() {
