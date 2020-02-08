@@ -26,14 +26,7 @@ public class RpnCalculator {
     }
 
     private void factorial() {
-        BigDecimal result = BigDecimal.ONE;
-        BigDecimal operand = getAccumulator();
-        while (operand.compareTo(BigDecimal.ONE) > 0) {
-            System.out.println(operand.compareTo(result));
-            result = result.multiply(operand);
-            operand = operand.subtract(BigDecimal.ONE);
-        }
-        setAccumulator(result);
+        new Factorial().execute(operandStack);
     }
 
     public void execute(String operator) {
