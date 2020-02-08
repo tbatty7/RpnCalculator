@@ -49,6 +49,9 @@ public class RpnCalculator {
             add();
         else if ("-".equals(operator))
             subtract();
-        else factorial();
+        else if ("!".equals(operator))
+            factorial();
+        else
+            throw new NoSuchOperator();
     }
 }
