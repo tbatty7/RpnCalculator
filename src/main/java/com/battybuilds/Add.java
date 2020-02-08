@@ -1,13 +1,8 @@
 package com.battybuilds;
 
-import java.math.BigDecimal;
-
-public class Add implements MathOperator {
+public class Add extends BinaryOperator {
     public void execute(OperandStack operandStack) {
-        BigDecimal secondNumber = operandStack.getAccumulator();
-        operandStack.drop();
-        BigDecimal firstNumber = operandStack.getAccumulator();
-        operandStack.drop();
+        getNumbers(operandStack);
         operandStack.setAccumulator(firstNumber.add(secondNumber));
     }
 }

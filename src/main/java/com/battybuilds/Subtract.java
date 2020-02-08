@@ -1,13 +1,10 @@
 package com.battybuilds;
 
-import java.math.BigDecimal;
+public class Subtract extends BinaryOperator{
 
-public class Subtract implements MathOperator {
     public void execute(OperandStack operandStack) {
-        BigDecimal secondNumber = operandStack.getAccumulator();
-        operandStack.drop();
-        BigDecimal firstNumber = operandStack.getAccumulator();
-        operandStack.drop();
+        getNumbers(operandStack);
         operandStack.setAccumulator(firstNumber.subtract(secondNumber));
     }
+
 }
