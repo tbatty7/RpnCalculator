@@ -20,14 +20,14 @@ public class AnRpnCalculatorWithTwoNumbersShould {
 
     @Test
     public void addThemCorrectly() {
-        rpnCalculator.add();
+        rpnCalculator.execute("+");
         BigDecimal result = rpnCalculator.getAccumulator();
         assertEquals(new BigDecimal(15), result);
     }
 
     @Test
     public void subtractThemCorrectly() {
-        rpnCalculator.subtract();
+        rpnCalculator.execute("-");
         BigDecimal result = rpnCalculator.getAccumulator();
         assertEquals(new BigDecimal(-5), result);
     }

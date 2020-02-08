@@ -17,7 +17,7 @@ public class RpnCalculator {
         operandStack.drop();
     }
 
-    public void add() {
+    private void add() {
         BigDecimal secondNumber = getAccumulator();
         drop();
         BigDecimal firstNumber = getAccumulator();
@@ -25,7 +25,7 @@ public class RpnCalculator {
         setAccumulator(firstNumber.add(secondNumber));
     }
 
-    public void subtract() {
+    private void subtract() {
         BigDecimal secondNumber = getAccumulator();
         drop();
         BigDecimal firstNumber = getAccumulator();
@@ -33,7 +33,7 @@ public class RpnCalculator {
         setAccumulator(firstNumber.subtract(secondNumber));
     }
 
-    public void factorial() {
+    private void factorial() {
         BigDecimal result = BigDecimal.ONE;
         BigDecimal operand = getAccumulator();
         while (operand.compareTo(BigDecimal.ONE) > 0) {

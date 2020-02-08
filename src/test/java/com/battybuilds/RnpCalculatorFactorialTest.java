@@ -18,14 +18,14 @@ public class RnpCalculatorFactorialTest {
 
     @Test
     public void returnsFactorialOfOneForZero() {
-        rpnCalculator.factorial();
+        rpnCalculator.execute("!");
         assertEquals(BigDecimal.ONE, rpnCalculator.getAccumulator());
     }
 
     @Test
     public void returnsFactorialOf120For5() {
         rpnCalculator.setAccumulator(new BigDecimal(5));
-        rpnCalculator.factorial();
+        rpnCalculator.execute("!");
         assertEquals(new BigDecimal(120), rpnCalculator.getAccumulator());
     }
 
