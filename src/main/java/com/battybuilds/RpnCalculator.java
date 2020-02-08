@@ -43,4 +43,12 @@ public class RpnCalculator {
         }
         setAccumulator(result);
     }
+
+    public void execute(String operator) {
+        if ("+".equals(operator))
+            add();
+        else if ("-".equals(operator))
+            subtract();
+        else factorial();
+    }
 }
