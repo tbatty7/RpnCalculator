@@ -17,26 +17,21 @@ public class RpnCalculator {
         operandStack.drop();
     }
 
-    private void add() {
-        new Add().execute(operandStack);
+    public void execute(String operatorName) {
+        MathOperator operator = findOperatorNamed(operatorName);
+        operator.execute(operandStack);
     }
 
-    private void subtract() {
-        new Subtract().execute(operandStack);
-    }
-
-    private void factorial() {
-        new Factorial().execute(operandStack);
-    }
-
-    public void execute(String operator) {
-        if ("+".equals(operator))
-            add();
-        else if ("-".equals(operator))
-            subtract();
-        else if ("!".equals(operator))
-            factorial();
+    private MathOperator findOperatorNamed(String operatorName) {
+        MathOperator operator;
+        if ("+".equals(operatorName))
+            operator = new Add();
+        else if ("-".equals(operatorName))
+            operator = new Subtract();
+        else if ("!".equals(operatorName))
+            operator = new Factorial();
         else
             throw new NoSuchOperator();
+        return operator;
     }
 }
