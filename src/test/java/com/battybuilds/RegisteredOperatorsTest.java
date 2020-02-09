@@ -41,6 +41,11 @@ public class RegisteredOperatorsTest {
         assertEquals(new BigDecimal(50), rpnCalculator.getAccumulator());
     }
 
+    @Test
+    public void canDivide() {
+        rpnCalculator.execute("/");
+    }
+
     @Test(expected = NoSuchOperator.class)
     public void throwsExceptionForInvalidOperator() {
         rpnCalculator.execute("bogus operator ___");

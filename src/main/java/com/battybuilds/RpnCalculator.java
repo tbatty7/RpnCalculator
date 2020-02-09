@@ -32,6 +32,8 @@ public class RpnCalculator {
             operator = new Factorial();
         else if ("*".equals(operatorName))
             operator = new Multiply();
+        else if ("/".equals(operatorName))
+            operator = new Divide();
         else
             throw new NoSuchOperator();
         return operator;
