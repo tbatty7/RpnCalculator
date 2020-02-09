@@ -8,5 +8,4 @@ public class Subtract extends BinaryOperator{
     protected BigDecimal executeImplementation(BigDecimal secondNumber, BigDecimal firstNumber) {
         return firstNumber.subtract(secondNumber);
     }
-
 }
