@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class Multiply extends BinaryOperator {
 
     @Override
-    protected BigDecimal executeImplementation(BigDecimal secondNumber, BigDecimal firstNumber) {
+    protected BigDecimal executeImplementation(BigDecimal firstNumber, BigDecimal secondNumber) {
         return firstNumber.multiply(secondNumber);
     }
 }

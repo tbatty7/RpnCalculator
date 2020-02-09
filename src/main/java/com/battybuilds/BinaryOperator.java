@@ -9,9 +9,9 @@ public abstract class BinaryOperator implements MathOperator {
         operandStack.drop();
         BigDecimal firstNumber = operandStack.getAccumulator();
         operandStack.drop();
-        BigDecimal result = executeImplementation(secondNumber, firstNumber);
+        BigDecimal result = executeImplementation(firstNumber, secondNumber);
         operandStack.setAccumulator(result);
     }
 
-    abstract protected BigDecimal executeImplementation(BigDecimal secondNumber, BigDecimal firstNumber);
+    abstract protected BigDecimal executeImplementation(BigDecimal firstNumber, BigDecimal secondNumber);
 }

@@ -2,10 +2,9 @@ package com.battybuilds;
 
 import java.math.BigDecimal;
 
-public class Add extends BinaryOperator {
-
+public class Divide extends BinaryOperator {
     @Override
     protected BigDecimal executeImplementation(BigDecimal firstNumber, BigDecimal secondNumber) {
-        return firstNumber.add(secondNumber);
+        return firstNumber.divide(secondNumber);
     }
 }

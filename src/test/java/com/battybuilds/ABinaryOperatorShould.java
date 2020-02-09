@@ -33,7 +33,7 @@ public class ABinaryOperatorShould {
         BigDecimal secondNumber = new BigDecimal(5);
         when(mockOperandStack.getAccumulator()).thenReturn(firstNumber).thenReturn(secondNumber);
         mockOperator.execute(mockOperandStack);
-        verify(mockOperator).executeImplementation(firstNumber, secondNumber);
+        verify(mockOperator).executeImplementation(secondNumber, firstNumber);
     }
 
     @Test
