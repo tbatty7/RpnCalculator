@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 
 public class RpnCalculator {
     private OperandStack operandStack = new OperandStack();
+    private final OperatorFactory operatorFactory;
+
+    public RpnCalculator() {
+        operatorFactory = new OperatorFactory();
+    }
 
     public BigDecimal getAccumulator() {
         return operandStack.getAccumulator();
@@ -23,7 +28,6 @@ public class RpnCalculator {
     }
 
     private MathOperator findOperatorNamed(String operatorName) {
-        OperatorFactory operatorFactory = new OperatorFactory();
         return operatorFactory.findOperatorNamed(operatorName);
     }
 }
