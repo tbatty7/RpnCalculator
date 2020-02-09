@@ -5,13 +5,13 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.Assert.assertEquals;
-
 public class RegisteredOperatorsTest {
     RpnCalculator rpnCalculator;
+    OperatorFactory operatorFactory;
 
     @Before
     public void setUp() {
+        operatorFactory = new OperatorFactory();
         rpnCalculator = new RpnCalculator();
         rpnCalculator.setAccumulator(new BigDecimal(5));
         rpnCalculator.setAccumulator(BigDecimal.TEN);
@@ -19,35 +19,31 @@ public class RegisteredOperatorsTest {
 
     @Test
     public void canAdd() {
-        rpnCalculator.execute("+");
-        assertEquals(new BigDecimal(15), rpnCalculator.getAccumulator());
+        operatorFactory.findOperatorNamed("+");
     }
 
     @Test
     public void canSubtract() {
-        rpnCalculator.execute("-");
-        assertEquals(new BigDecimal(-5), rpnCalculator.getAccumulator());
+        operatorFactory.findOperatorNamed("-");
     }
 
     @Test
     public void canCalculateFactorial() {
-        rpnCalculator.execute("!");
-        assertEquals(new BigDecimal(3628800), rpnCalculator.getAccumulator());
+        operatorFactory.findOperatorNamed("!");
     }
 
     @Test
     public void canMultiply() {
-        rpnCalculator.execute("*");
-        assertEquals(new BigDecimal(50), rpnCalculator.getAccumulator());
+        operatorFactory.findOperatorNamed("*");
     }
 
     @Test
     public void canDivide() {
-        rpnCalculator.execute("/");
+        operatorFactory.findOperatorNamed("/");
     }
 
     @Test(expected = NoSuchOperator.class)
     public void throwsExceptionForInvalidOperator() {
-        rpnCalculator.execute("bogus operator ___");
+        operatorFactory.findOperatorNamed("bogus operator ___");
     }
 }
