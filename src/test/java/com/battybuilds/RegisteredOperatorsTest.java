@@ -3,42 +3,36 @@ package com.battybuilds;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.math.BigDecimal;
-
 public class RegisteredOperatorsTest {
-    RpnCalculator rpnCalculator;
     OperatorFactory operatorFactory;
 
     @Before
     public void setUp() {
         operatorFactory = new OperatorFactory();
-        rpnCalculator = new RpnCalculator();
-        rpnCalculator.setAccumulator(new BigDecimal(5));
-        rpnCalculator.setAccumulator(BigDecimal.TEN);
     }
 
     @Test
-    public void canAdd() {
+    public void canFindAdd() {
         operatorFactory.findOperatorNamed("+");
     }
 
     @Test
-    public void canSubtract() {
+    public void canFindSubtract() {
         operatorFactory.findOperatorNamed("-");
     }
 
     @Test
-    public void canCalculateFactorial() {
+    public void canFindFactorial() {
         operatorFactory.findOperatorNamed("!");
     }
 
     @Test
-    public void canMultiply() {
+    public void canFindMultiply() {
         operatorFactory.findOperatorNamed("*");
     }
 
     @Test
-    public void canDivide() {
+    public void canFindDivide() {
         operatorFactory.findOperatorNamed("/");
     }
 
