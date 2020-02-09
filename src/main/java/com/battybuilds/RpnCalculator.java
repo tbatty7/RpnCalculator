@@ -30,6 +30,8 @@ public class RpnCalculator {
             operator = new Subtract();
         else if ("!".equals(operatorName))
             operator = new Factorial();
+        else if ("*".equals(operatorName))
+            operator = new Multiply();
         else
             throw new NoSuchOperator();
         return operator;

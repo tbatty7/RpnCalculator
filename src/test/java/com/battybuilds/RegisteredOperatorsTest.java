@@ -35,6 +35,12 @@ public class RegisteredOperatorsTest {
         assertEquals(new BigDecimal(3628800), rpnCalculator.getAccumulator());
     }
 
+    @Test
+    public void canMultiply() {
+        rpnCalculator.execute("*");
+        assertEquals(new BigDecimal(50), rpnCalculator.getAccumulator());
+    }
+
     @Test(expected = NoSuchOperator.class)
     public void throwsExceptionForInvalidOperator() {
         rpnCalculator.execute("bogus operator ___");
