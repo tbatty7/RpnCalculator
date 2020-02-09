@@ -4,13 +4,14 @@ import java.math.BigDecimal;
 
 public abstract class BinaryOperator implements MathOperator {
 
-    protected BigDecimal secondNumber;
-    protected BigDecimal firstNumber;
-
-    protected void getNumbers(OperandStack operandStack) {
-        secondNumber = operandStack.getAccumulator();
+    public void execute(OperandStack operandStack) {
+        BigDecimal secondNumber = operandStack.getAccumulator();
         operandStack.drop();
-        firstNumber = operandStack.getAccumulator();
+        BigDecimal firstNumber = operandStack.getAccumulator();
         operandStack.drop();
+        BigDecimal result = executeImplementation(secondNumber, firstNumber);
+        operandStack.setAccumulator(result);
     }
+
+    abstract protected BigDecimal executeImplementation(BigDecimal secondNumber, BigDecimal firstNumber);
 }
