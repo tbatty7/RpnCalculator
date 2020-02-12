@@ -9,10 +9,11 @@ public class OperatorFactory {
 
     public OperatorFactory(Map<String, MathOperator> operators) {
         this.operators = operators;
+        insertOperators();
     }
+
     public OperatorFactory() {
         this(new ConcurrentHashMap<>());
-        insertOperators();
     }
 
     private void insertOperators() {
