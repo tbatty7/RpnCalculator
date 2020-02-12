@@ -3,11 +3,17 @@ package com.battybuilds;
 import java.math.BigDecimal;
 
 public class RpnCalculator {
-    private OperandStack operandStack = new OperandStack();
+    private OperandStack operandStack;
+
     private final OperatorFactory operatorFactory;
 
     public RpnCalculator() {
-        operatorFactory = new OperatorFactory();
+        this(new OperatorFactory(), new OperandStack());
+    }
+
+    public RpnCalculator(OperatorFactory operatorFactory, OperandStack operandStack) {
+        this.operatorFactory = operatorFactory;
+        this.operandStack = operandStack;
     }
 
     public BigDecimal getAccumulator() {
