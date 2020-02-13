@@ -3,7 +3,7 @@ package com.battybuilds;
 import org.junit.Before;
 import org.junit.Test;
 
-public class RegisteredOperatorsTest {
+public class OperatorFactoryRegisteredOperatorsTest {
     OperatorFactory operatorFactory;
 
     @Before
@@ -34,6 +34,11 @@ public class RegisteredOperatorsTest {
     @Test
     public void canFindDivide() {
         operatorFactory.findOperatorNamed("/");
+    }
+
+    @Test
+    public void canFindSum() {
+        operatorFactory.findOperatorNamed("sum");
     }
 
     @Test(expected = NoSuchOperator.class)

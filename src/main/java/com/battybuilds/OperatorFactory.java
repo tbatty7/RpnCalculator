@@ -22,6 +22,7 @@ public class OperatorFactory {
         operators.put("!", new Factorial());
         operators.put("*", new Multiply());
         operators.put("/", new Divide());
+        operators.put("sum", new Sum());
     }
 
     public MathOperator findOperatorNamed(String operatorName) {
