@@ -3,7 +3,7 @@ package com.battybuilds;
 import org.junit.Test;
 
 public class RpnCalculatorExceptionsTest {
-    private static class OperatorFactorySabateur extends OperatorFactory {
+    private static class OperatorFactorySaboteur extends OperatorFactory {
         @Override
         public MathOperator findOperatorNamed(String operatorName) {
             throw new NoSuchOperator();
@@ -12,7 +12,7 @@ public class RpnCalculatorExceptionsTest {
 
     @Test(expected = NoSuchOperator.class)
     public void shouldBubbleUpExceptionsForInvalidOperator() {
-        RpnCalculator rpnCalculator = new RpnCalculator(new OperatorFactorySabateur(), new OperandStack());
+        RpnCalculator rpnCalculator = new RpnCalculator(new OperatorFactorySaboteur(), new OperandStack());
         rpnCalculator.execute("+");
     }
 }
