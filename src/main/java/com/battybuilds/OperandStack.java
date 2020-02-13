@@ -25,4 +25,8 @@ public class OperandStack {
         }
         operandStack.pop();
     }
+
+    public int size() {
+        return operandStack.size();
+    }
 }

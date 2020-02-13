@@ -6,6 +6,7 @@ import org.mockito.Mockito;
 
 import java.math.BigDecimal;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class ABinaryOperatorShould {
@@ -22,7 +23,7 @@ public class ABinaryOperatorShould {
 
     @Test
     public void acquireTwoParametersFromStack() {
-        mockOperator.execute(mockOperandStack);
+        mockOperator.execute(mockOperandStack); // The execute actually runs because it is set to final so it cannot be overridden
         verify(mockOperandStack, times(2)).getAccumulator();
         verify(mockOperandStack, times(2)).drop();
     }
@@ -34,6 +35,15 @@ public class ABinaryOperatorShould {
         when(mockOperandStack.getAccumulator()).thenReturn(firstNumber).thenReturn(secondNumber);
         mockOperator.execute(mockOperandStack);
         verify(mockOperator).executeImplementation(secondNumber, firstNumber);
+    }
+
+    @Test
+    public void reduceStackSizeByOne() {
+        OperandStack realOperandStack = new OperandStack();
+        realOperandStack.setAccumulator(BigDecimal.TEN);
+        realOperandStack.setAccumulator(BigDecimal.ONE);
+        mockOperator.execute(realOperandStack);
+        assertEquals(1, realOperandStack.size());
     }
 
     @Test
