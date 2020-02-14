@@ -4,11 +4,13 @@ import java.math.BigDecimal;
 
 public class PrimeFactors implements MathOperator {
 
+    private static final BigDecimal TWO = new BigDecimal(2);
+
     @Override
     public void execute(OperandStack values) {
         BigDecimal value = values.pop();
-        if (value.compareTo(new BigDecimal(2))== 0) {
-            values.setAccumulator(new BigDecimal(2));
+        if (value.compareTo(TWO)== 0) {
+            values.setAccumulator(value);
         }
     }
 }
