@@ -41,6 +41,11 @@ public class OperatorFactoryRegisteredOperatorsTest {
         operatorFactory.findOperatorNamed("sum");
     }
 
+    @Test
+    public void canFindPrimeFactors() {
+        operatorFactory.findOperatorNamed("primeFactors");
+    }
+
     @Test(expected = NoSuchOperator.class)
     public void throwsExceptionForInvalidOperator() {
         operatorFactory.findOperatorNamed("bogus operator ___");

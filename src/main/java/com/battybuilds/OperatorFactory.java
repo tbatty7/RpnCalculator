@@ -23,6 +23,7 @@ public class OperatorFactory {
         operators.put("*", new Multiply());
         operators.put("/", new Divide());
         operators.put("sum", new Sum());
+        operators.put("primeFactors", new PrimeFactors());
     }
 
     public MathOperator findOperatorNamed(String operatorName) {
