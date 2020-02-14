@@ -34,6 +34,19 @@ public class PrimeFactorsTest {
         thenTheResultShouldBeEmpty();
     }
 
+    @Test
+    public void primeFactorsOfFourShouldBeTwoAndTwo() {
+        givenAValueOf(4);
+        whenCalculatingItsPrimeFactors();
+        thenResultShouldBe(2);
+        and(2);
+        thenTheResultShouldBeEmpty();
+    }
+
+    private void and(int expected) {
+        thenResultShouldBe(expected);
+    }
+
     private void thenResultShouldBe(int expected) {
         assertEquals(new BigDecimal(expected), operandStack.getAccumulator());
         operandStack.pop();
