@@ -10,7 +10,7 @@ public class PrimeFactors implements MathOperator {
     public void execute(OperandStack values) {
         BigDecimal value = values.pop();
         if (value.compareTo(TWO) >= 0) {
-            if (value.remainder(TWO).equals(BigDecimal.ZERO)) {
+            while (value.remainder(TWO).equals(BigDecimal.ZERO)) {
                 values.setAccumulator(TWO);
                 value = value.divide(TWO);
             }

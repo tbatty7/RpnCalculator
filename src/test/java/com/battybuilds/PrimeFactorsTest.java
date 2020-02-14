@@ -60,6 +60,18 @@ public class PrimeFactorsTest {
         thenTheResultShouldBeEmpty();
     }
 
+    @Test
+    public void primeFactorsOfEightShouldBeTwoandTwoAndTwo() {
+        givenAValueOf(8);
+        whenCalculatingItsPrimeFactors();
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenTheResultShouldBeEmpty();
+    }
+
+
+
     private void and(int expected) {
         thenResultShouldBe(expected);
     }
