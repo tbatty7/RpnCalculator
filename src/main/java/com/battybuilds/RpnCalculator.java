@@ -25,7 +25,7 @@ public class RpnCalculator {
     }
 
     public void drop() {
-        operandStack.drop();
+        operandStack.pop();
     }
 
     public void execute(String operatorName) {

@@ -31,13 +31,13 @@ public class OperandStackTest {
     @Test
     public void dropsNumbersOffStack() {
         operandStack.setAccumulator(BigDecimal.ONE);
-        operandStack.drop();
+        operandStack.pop();
         assertEquals(BigDecimal.ZERO, operandStack.getAccumulator());
     }
 
     @Test
     public void doesNothingWhenCallDropOnEmptyStack() {
-        operandStack.drop();
+        operandStack.pop();
         assertEquals(BigDecimal.ZERO, operandStack.getAccumulator());
     }
 }

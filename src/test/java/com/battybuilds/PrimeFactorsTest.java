@@ -27,7 +27,7 @@ public class PrimeFactorsTest {
 
     private void thenResultShouldBe(int expected) {
         assertEquals(new BigDecimal(expected), operandStack.getAccumulator());
-        operandStack.drop();
+        operandStack.pop();
     }
 
     private void thenTheResultShouldBeEmpty() {

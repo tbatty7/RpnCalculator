@@ -6,7 +6,7 @@ public class PrimeFactors implements MathOperator {
 
     @Override
     public void execute(OperandStack values) {
-        BigDecimal value = values.drop();
+        BigDecimal value = values.pop();
         if (value.compareTo(new BigDecimal(2))== 0) {
             values.setAccumulator(new BigDecimal(2));
         }

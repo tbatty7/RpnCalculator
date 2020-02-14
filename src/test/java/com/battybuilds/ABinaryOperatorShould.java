@@ -25,7 +25,7 @@ public class ABinaryOperatorShould {
     public void acquireTwoParametersFromStack() {
         mockOperator.execute(mockOperandStack); // The execute actually runs because it is set to final so it cannot be overridden
         verify(mockOperandStack, times(2)).getAccumulator();
-        verify(mockOperandStack, times(2)).drop();
+        verify(mockOperandStack, times(2)).pop();
     }
 
     @Test
