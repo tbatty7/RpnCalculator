@@ -43,6 +43,23 @@ public class PrimeFactorsTest {
         thenTheResultShouldBeEmpty();
     }
 
+    @Test
+    public void primeFactorsOfFiveShouldBeFive() {
+        givenAValueOf(5);
+        whenCalculatingItsPrimeFactors();
+        thenResultShouldBe(5);
+        thenTheResultShouldBeEmpty();
+    }
+
+    @Test
+    public void primeFactorsOfSixShouldBeThreeAndTwo() {
+        givenAValueOf(6);
+        whenCalculatingItsPrimeFactors();
+        thenResultShouldBe(3);
+        and(2);
+        thenTheResultShouldBeEmpty();
+    }
+
     private void and(int expected) {
         thenResultShouldBe(expected);
     }
