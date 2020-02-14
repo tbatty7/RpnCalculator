@@ -19,11 +19,11 @@ public class OperandStack {
         return operandStack.peek();
     }
 
-    public void drop() {
+    public BigDecimal drop() {
         if (operandStack.empty()) {
-            return;
+            return null;
         }
-        operandStack.pop();
+        return operandStack.pop();
     }
 
     public int size() {
