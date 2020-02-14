@@ -70,7 +70,14 @@ public class PrimeFactorsTest {
         thenTheResultShouldBeEmpty();
     }
 
-
+    @Test
+    public void primeFactorsOfNineShouldBeThreeAndThree() {
+        givenAValueOf(9);
+        whenCalculatingItsPrimeFactors();
+        thenResultShouldBe(3);
+        thenResultShouldBe(3);
+        thenTheResultShouldBeEmpty();
+    }
 
     private void and(int expected) {
         thenResultShouldBe(expected);

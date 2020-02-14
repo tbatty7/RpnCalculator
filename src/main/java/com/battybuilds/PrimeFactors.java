@@ -9,11 +9,13 @@ public class PrimeFactors implements MathOperator {
     @Override
     public void execute(OperandStack values) {
         BigDecimal value = values.pop();
-        if (value.compareTo(TWO) >= 0) {
-            while (value.remainder(TWO).equals(BigDecimal.ZERO)) {
-                values.setAccumulator(TWO);
-                value = value.divide(TWO);
+        BigDecimal divisor = TWO;
+        while (value.compareTo(divisor) >= 0) {
+            while (value.remainder(divisor).equals(BigDecimal.ZERO)) {
+                values.setAccumulator(divisor);
+                value = value.divide(divisor);
             }
+            divisor = divisor.add(BigDecimal.ONE);
         }
         if (value.compareTo(TWO) >= 0) {
             values.setAccumulator(value);
