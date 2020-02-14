@@ -23,6 +23,15 @@ public class PrimeFactorsTest {
         givenAValueOf(2);
         whenCalculatingItsPrimeFactors();
         thenResultShouldBe(2);
+        thenTheResultShouldBeEmpty();
+    }
+
+    @Test
+    public void primeFactorsOfThreeShouldBeThree() {
+        givenAValueOf(3);
+        whenCalculatingItsPrimeFactors();
+        thenResultShouldBe(3);
+        thenTheResultShouldBeEmpty();
     }
 
     private void thenResultShouldBe(int expected) {
