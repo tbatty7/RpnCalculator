@@ -79,6 +79,32 @@ public class PrimeFactorsTest {
         thenTheResultShouldBeEmpty();
     }
 
+    @Test
+    public void primeFactorsOf1024shouldBeTen2s() {
+        givenAValueOf(1024);
+        whenCalculatingItsPrimeFactors();
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenResultShouldBe(2);
+        thenTheResultShouldBeEmpty();
+    }
+
+    @Test
+    public void primeFactorsOf15ShouldBeFiveAndThree() {
+        givenAValueOf(15);
+        whenCalculatingItsPrimeFactors();
+        thenResultShouldBe(5);
+        thenResultShouldBe(3);
+        thenTheResultShouldBeEmpty();
+    }
+
     private void and(int expected) {
         thenResultShouldBe(expected);
     }
