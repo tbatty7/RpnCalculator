@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class RpnCalculator {
     private OperandStack operandStack;
-
     private final OperatorFactory operatorFactory;
+    private CompositeMathOperator compositeMathOperator;
 
     public RpnCalculator() {
         this(new OperatorFactory(), new OperandStack());
@@ -35,5 +35,19 @@ public class RpnCalculator {
 
     private MathOperator findOperatorNamed(String operatorName) {
         return operatorFactory.findOperatorNamed(operatorName);
+    }
+
+    public void startProgram() {
+        compositeMathOperator = new CompositeMathOperator();
+    }
+
+    public void addToProgram(String operatorName) {
+        MathOperator operator = findOperatorNamed(operatorName);
+        compositeMathOperator.append(operator);
+    }
+
+    public void saveProgramAs(String programName) {
+        operatorFactory.addOperatorNamed(programName, compositeMathOperator);
+        compositeMathOperator = null;
     }
 }
