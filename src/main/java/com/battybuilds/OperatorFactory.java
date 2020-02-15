@@ -32,4 +32,11 @@ public class OperatorFactory {
             throw new NoSuchOperator();
         return operator;
     }
+
+    public void addOperatorNamed(String operatorName, MathOperator operator) {
+        if (operators.containsKey(operatorName)) {
+            throw new OperatorNameAlreadyExists();
+        }
+        operators.put(operatorName, operator);
+    }
 }
