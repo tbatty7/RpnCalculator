@@ -3,4 +3,5 @@ Patterns used:
 - Strategy pattern
 - Composite pattern
 - Factory Pattern added
+- Dependency Injection
 
